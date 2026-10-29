@@ -28,6 +28,6 @@ Open `index.html` in a modern browser. The app is plain HTML, CSS, and JavaScrip
 ## Important study and privacy notes
 
 - The thinker database is a revision aid, not an official NTA list. “Core” and “extended” labels are study guidance, not an official classification.
-- Verify syllabus coverage, publication dates, editions, quotations, and specific attributions against the latest official syllabus and reliable academic sources.
-- Saved thinkers, personal thinker notes, syllabus progress, and topic notes are stored locally in the current browser. They do not automatically sync across devices. Use the backup option for the existing study progress and keep your own separate backup of browser-only thinker notes if needed.
+- Verify syllabus coverage against the latest official UGC-NET syllabus page: https://www.ugcnetonline.in/syllabus-new.php. Also verify publication dates, editions, quotations, and specific attributions against reliable academic sources.
+- Saved thinkers, personal thinker notes, syllabus progress, and topic notes are stored locally in the current browser. They do not automatically sync across devices. The **Backup** option exports study progress, saved thinkers, and thinker notes to a JSON file.
 - This static website does not send your study notes to a server.
