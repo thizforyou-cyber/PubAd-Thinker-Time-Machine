@@ -126,6 +126,7 @@
     <div class="thinker-search"><label for="thinkerSearch">Find a thinker, work or concept</label><input id="thinkerSearch" placeholder="e.g. Riggs, bounded rationality, POSDCORB"></div>
     <div><label for="thinkerSchool">School / approach</label><select id="thinkerSchool"><option value="all">All schools</option></select></div>
     <div><label for="thinkerEra">Historical period</label><select id="thinkerEra"><option value="all">All periods</option></select></div>
+    <label style="display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)"><input id="thinkerIndianOnly" type="checkbox" style="width:auto"> Indian thinkers</label>
     <button class="btn ghost" id="thinkerClear">Clear filters</button>
   </div>
   <div class="thinker-tabs"><button class="thinker-tab active" data-think-mode="timeline">◷ Chronology</button><button class="thinker-tab" data-think-mode="schools">▦ Schools of thought</button><button class="thinker-tab" data-think-mode="connections">⤳ Connections</button></div>
@@ -372,8 +373,8 @@ function renderThinkerFilters(){
  document.getElementById("schoolCount").textContent=thinkerUnique("schools").length;
 }
 function filteredThinkers(){
- const q=document.getElementById("thinkerSearch").value.trim().toLowerCase(),s=document.getElementById("thinkerSchool").value,e=document.getElementById("thinkerEra").value;
- return thinkers.filter(t=>(!q||[t.n,t.work,t.contribution,t.era,t.displayYear,...t.schools,...t.concepts,...t.related].join(" ").toLowerCase().includes(q))&&(s==="all"||t.schools.includes(s))&&(e==="all"||t.era===e)).sort((a,b)=>a.y-b.y||a.n.localeCompare(b.n));
+ const q=document.getElementById("thinkerSearch").value.trim().toLowerCase(),s=document.getElementById("thinkerSchool").value,e=document.getElementById("thinkerEra").value,indian=document.getElementById("thinkerIndianOnly").checked;
+ return thinkers.filter(t=>(!q||[t.n,t.work,t.contribution,t.era,t.displayYear,...t.schools,...t.concepts,...t.related].join(" ").toLowerCase().includes(q))&&(s==="all"||t.schools.includes(s))&&(e==="all"||t.era===e)&&(!indian||/indian|kautilya|chanakya|gandhi|ambedkar|patel|nehru|visvesvaraya/i.test([t.n,t.era,...t.schools].join(" ")))).sort((a,b)=>a.y-b.y||a.n.localeCompare(b.n));
 }
 function thinkerCard(t){
  return '<article class="thinker-card"><div class="thinker-year">'+thinkerEsc(t.displayYear)+'</div><div><h3>'+thinkerEsc(t.n)+'</h3><p><strong>'+thinkerEsc(t.work)+'</strong></p><p>'+thinkerEsc(t.contribution)+'</p><div class="thinker-tags">'+t.schools.slice(0,3).map(s=>'<span class="thinker-tag">'+thinkerEsc(s)+'</span>').join("")+'<span class="thinker-tag">'+thinkerEsc(t.tier)+'</span></div></div><button class="thinker-open" onclick="openThinker(\''+thinkerEsc(t.n).replace(/\\/g,"\\\\").replace(/'/g,"\\'")+'\')">Explore →</button></article>';
@@ -405,7 +406,8 @@ function closeThinker(){document.getElementById("thinkerDetail").hidden=true;sel
 document.getElementById("thinkerSearch").addEventListener("input",renderThinkers);
 document.getElementById("thinkerSchool").addEventListener("change",renderThinkers);
 document.getElementById("thinkerEra").addEventListener("change",renderThinkers);
-document.getElementById("thinkerClear").addEventListener("click",()=>{document.getElementById("thinkerSearch").value="";document.getElementById("thinkerSchool").value="all";document.getElementById("thinkerEra").value="all";renderThinkers()});
+document.getElementById("thinkerIndianOnly").addEventListener("change",renderThinkers);
+document.getElementById("thinkerClear").addEventListener("click",()=>{document.getElementById("thinkerSearch").value="";document.getElementById("thinkerSchool").value="all";document.getElementById("thinkerEra").value="all";document.getElementById("thinkerIndianOnly").checked=false;renderThinkers()});
 document.querySelectorAll("[data-think-mode]").forEach(b=>b.addEventListener("click",()=>{thinkerMode=b.dataset.thinkMode;renderThinkers()}));
 
 let thinkerSaved=loadThinkerStore("pubadThinkerSaved",[]), thinkerNotebook=loadThinkerStore("pubadThinkerNotes",{}), recallThinker=null, recallShown=false;
