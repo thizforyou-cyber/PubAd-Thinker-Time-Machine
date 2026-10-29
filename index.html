@@ -22,6 +22,7 @@
 
 /* Focus mode: one study workspace at a time */
 .rightcol .panel.tool-hidden{display:none}
+.rightcol [data-tool-panel][style*="display: block"]{display:block!important}
 .main[data-active-section="thinkers"] .library-column{display:block}
 .main[data-active-section="thinkers"] .rightcol{display:block}
 .main[data-active-section="thinkers"] .rightcol #profile{display:block}
@@ -247,8 +248,8 @@ function switchSection(name){
 document.body.classList.toggle("study-focus",name!=="thinkers");
 document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("active",b.dataset.section===name));const more=document.querySelector(".nav-more");if(more){more.open=false;more.querySelector("summary").classList.toggle("active",["secondBrain","recall","compare","ideaMap"].includes(name));}
 $("mainView").dataset.activeSection=name;
-document.querySelectorAll("[data-tool-panel]").forEach(p=>p.classList.toggle("tool-hidden",p.dataset.toolPanel!==name));
-window.scrollTo({top:0,behavior:"smooth"});
+document.querySelectorAll("[data-tool-panel]").forEach(p=>{const active=p.dataset.toolPanel===name;p.classList.toggle("tool-hidden",!active);p.style.display=active?"block":"none";});
+// Keep the current scroll position when changing study sections; do not jump the page to the top.
 if(name==="ideaMap")renderIdeaMap(current?thinkers.find(t=>t.n===current):null);
 }
 document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>switchSection(b.dataset.section)));
