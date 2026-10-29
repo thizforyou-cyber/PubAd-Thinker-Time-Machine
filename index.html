@@ -26,6 +26,8 @@
 .main[data-active-section="thinkers"] .library-column{display:block}
 .main[data-active-section="thinkers"] .rightcol{display:block}
 .main[data-active-section="thinkers"] .rightcol #profile{display:block}
+.main[data-active-section="dashboard"] .library-column,.main[data-active-section="syllabus"] .library-column,.main[data-active-section="revision"] .library-column{display:none}
+.main[data-active-section="dashboard"] .rightcol #profile,.main[data-active-section="syllabus"] .rightcol #profile,.main[data-active-section="revision"] .rightcol #profile{display:none}
 .main[data-active-section="thinkers"] .rightcol [data-tool-panel]{display:none!important}
 .main[data-active-section="secondBrain"],.main[data-active-section="recall"],.main[data-active-section="compare"],.main[data-active-section="ideaMap"]{display:block;min-height:50vh}
 .main[data-active-section="secondBrain"] .library-column,.main[data-active-section="recall"] .library-column,.main[data-active-section="compare"] .library-column,.main[data-active-section="ideaMap"] .library-column{display:none}
@@ -88,7 +90,7 @@
 .main:not([data-active-section="thinkers"]) .library-column{display:none!important}
 .main:not([data-active-section="thinkers"]) .rightcol #profile{display:none!important}
 .main:not([data-active-section="thinkers"]) .rightcol{display:block!important}
-.main:not([data-active-section="thinkers"]) .rightcol [data-tool-panel]{display:none!important}
+/* Active tool panels are controlled by the explicit section selectors below. */
 .main[data-active-section="dashboard"] .rightcol [data-tool-panel="dashboard"],
 .main[data-active-section="syllabus"] .rightcol [data-tool-panel="syllabus"],
 .main[data-active-section="revision"] .rightcol [data-tool-panel="revision"]{display:block!important;max-width:1000px;margin:0 auto;padding:clamp(18px,3vw,32px)}
