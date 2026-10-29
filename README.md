@@ -1,33 +1,34 @@
 # Thinker Time Machine — Public Administration NET/JRF
 
-A standalone, browser-based study space for UGC NET/JRF Public Administration (Subject Code 014). The goal is to connect chronology, schools of thought, concepts, and exam revision rather than treat each thinker as an isolated fact.
+A standalone website for studying the thinkers, schools, concepts, and intellectual connections relevant to Public Administration NET/JRF. This is a separate project from the broader Pubadin syllabus website.
 
-## What is included
+## What this standalone site does
 
-- **Chronology first:** browse 89 thinker profiles by the period of a key work or contribution.
-- **Schools and connections:** explore overlapping approaches and related thinkers.
-- **Search and filters:** search names, works, concepts, schools, periods, and quickly filter Indian thinkers.
-- **Thinker profiles:** review key works, contributions, concepts, criticisms, and related thinkers.
-- **Side-by-side comparison:** compare two thinkers' works, ideas, schools, and limitations.
-- **Active recall:** generate a thinker/concept prompt, try to answer from memory, then reveal the answer.
-- **My Thinker Second Brain:** save thinkers and write personal revision notes in your browser.
-- **Existing study tools:** 10-unit syllabus workspace, topic notes, progress tracking, practice quiz, revision cards, mind maps, resource search, and downloadable progress backup.
-- **Responsive, static site:** no framework, server, account, or build step required.
+- **Chronological timeline:** explore 79 thinker profiles by period.
+- **Search and filters:** find thinkers by name, key work, contribution, concept, school, or period.
+- **School view:** regroup thinkers by their schools and approaches.
+- **Thinker profiles:** revise key works, contributions, concepts, related thinkers, and criticism/exam nuance.
+- **Idea map:** follow related-thinker connections and concepts from a selected thinker.
+- **Side-by-side comparison:** compare two thinkers' key works, contributions, concepts, schools, and criticisms.
+- **Active recall:** get a concept prompt, try to answer from memory, then reveal the answer.
+- **Personal second brain:** save thinkers and write private revision notes in the browser.
+- **Backup and restore:** export saved thinkers and notes as JSON and import them later.
+- **Responsive layout:** works on desktop and mobile browsers.
 
 ## Run locally
 
-Open `index.html` in a modern browser. The app is plain HTML, CSS, and JavaScript.
+Open `index.html` in a modern browser. This is a static HTML/CSS/JavaScript website; no build step, server, or account is required.
 
 ## Publish with GitHub Pages
 
-1. Open **Settings → Pages** in this repository.
+1. Open this repository's **Settings → Pages**.
 2. Under **Build and deployment**, choose **Deploy from a branch**.
 3. Select branch `main` and folder `/(root)`, then save.
-4. Wait for deployment and open the published URL displayed on that settings page.
+4. Wait for deployment and use the published URL shown in the Pages settings.
 
-## Important study and privacy notes
+## Notes
 
-- The thinker database is a revision aid, not an official NTA list. “Core” and “extended” labels are study guidance, not an official classification.
-- Verify syllabus coverage against the latest official UGC-NET syllabus page: https://www.ugcnetonline.in/syllabus-new.php. Also verify publication dates, editions, quotations, and specific attributions against reliable academic sources.
-- Saved thinkers, personal thinker notes, syllabus progress, and topic notes are stored locally in the current browser. They do not automatically sync across devices. The **Backup** option exports study progress, saved thinkers, and thinker notes to a JSON file.
-- This static website does not send your study notes to a server.
+- This is an independent revision aid, not an official NTA database. Verify syllabus coverage and attributions against the latest official syllabus and reliable academic sources: https://www.ugcnetonline.in/syllabus-new.php
+- The connection map follows related-thinker links in the study data; a link does not necessarily prove direct historical influence.
+- Saved thinkers and notes are stored locally in the current browser. Export a JSON backup before clearing browser data or changing devices.
+- The website does not send your personal revision notes to a server.
