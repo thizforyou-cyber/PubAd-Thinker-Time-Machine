@@ -4,10 +4,14 @@ A standalone website for studying the thinkers, schools, concepts, and intellect
 
 ## What this standalone site does
 
-- **Chronological timeline:** explore 79 thinker profiles by period.
+- **Clearer study cards:** see each thinker’s period, key book, core ideas, and revision priority at a glance.
+- **Thinker portraits:** the site tries to load a portrait from Wikipedia when one is available; initials remain as a fallback.
+- **One-click research:** thinker names open a Wikipedia search, and profiles include a Google Scholar search for academic reading.
+- **Memory shortcut:** each profile uses a repeatable Book → Key ideas → Exam link structure, plus your own saved memory cue.
+- **Chronological timeline:** explore the thinker profiles by period.
 - **Search and filters:** find thinkers by name, key work, contribution, concept, school, or period.
 - **School view:** regroup thinkers by their schools and approaches.
-- **Thinker profiles:** revise key works, contributions, concepts, related thinkers, and criticism/exam nuance.
+- **Thinker profiles:** revise key works, plain-language contributions, concepts, related thinkers, and criticism/exam nuance.
 - **Idea map:** follow related-thinker connections and concepts from a selected thinker.
 - **Side-by-side comparison:** compare two thinkers' key works, contributions, concepts, schools, and criticisms.
 - **Active recall:** get a concept prompt, try to answer from memory, then reveal the answer.
