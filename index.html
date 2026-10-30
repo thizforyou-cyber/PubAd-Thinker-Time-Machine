@@ -303,6 +303,7 @@ $("revisionRecall").onclick=()=>{switchSection("recall");newRecall()};
 $("resetSyllabus").onclick=()=>{if(confirm("Reset every syllabus checklist item?")){try{localStorage.removeItem("ttm_syllabus")}catch(e){}renderSyllabus();renderDashboard();notify("Syllabus checklist reset.")}};
 $("search").addEventListener("input",renderTimeline);$("school").addEventListener("change",renderTimeline);$("era").addEventListener("change",renderTimeline);$("clear").onclick=()=>{$("search").value="";$("school").value="all";$("era").value="all";renderTimeline()};document.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll("[data-mode]").forEach(x=>x.classList.toggle("active",x===b));renderTimeline()});$("compare").onclick=compare;$("reveal").onclick=reveal;$("nextRecall").onclick=newRecall;$("export").onclick=exportData;$("importBtn").onclick=()=>$("importFile").click();$("importFile").onchange=e=>{if(e.target.files[0])importData(e.target.files[0])};
 function switchSection(name){
+delete $("mainView").dataset.profileOpen;
 document.body.classList.toggle("study-focus",name!=="thinkers");
 document.querySelectorAll("[data-section]").forEach(b=>b.classList.toggle("active",b.dataset.section===name));const more=document.querySelector(".nav-more");if(more){more.open=false;more.querySelector("summary").classList.toggle("active",["secondBrain","recall","compare","ideaMap"].includes(name));}
 $("mainView").dataset.activeSection=name;
